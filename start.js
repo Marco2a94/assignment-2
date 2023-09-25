@@ -16,5 +16,6 @@ app.use((req, res) => {
 });
 
 app.listen(port, () => {
-    console.log("Server started succesfully");
+    console.log("Server started successfully")
+    
 });
