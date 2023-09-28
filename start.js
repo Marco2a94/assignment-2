@@ -9,7 +9,17 @@ app.get("/", (req, res) => {
 });*/
 
 
-app.use(express.static(path.join(__dirname + '/public')));
+//app.use(express.static(path.join(__dirname + '/public')));
+
+
+
+app.use("/", (req, res) =>{
+    res.status(200).send("On root")})
+
+const routes = require("./routes/routes.js")
+
+app.use("/routes", routes)
+
 
 app.use((req, res) => {
     res.status(404).send('<H1>Error 404 : Ressource not found !');
