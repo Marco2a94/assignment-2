@@ -3,7 +3,7 @@ CREATE TABLE Mods (
     id SERIAL PRIMARY KEY,
     mod_name VARCHAR(255) NOT NULL,
     description TEXT,
-    author VARCHAR(100),
+    user_id INT REFERENCES Users(id),
     date_publication DATE,
     creation_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
