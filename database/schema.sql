@@ -5,7 +5,7 @@ CREATE TABLE Mods (
     description TEXT,
     author VARCHAR(100),
     date_publication DATE,
-    date_creation TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    creation_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 -- Table: Users
@@ -22,7 +22,7 @@ CREATE TABLE Comments (
     paragraph TEXT NOT NULL,
     user_id INT REFERENCES Users(id),
     mod_id INT REFERENCES Mods(id),
-    date_creation TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    creation_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 -- Table: Likes
@@ -30,6 +30,6 @@ CREATE TABLE Likes (
     id SERIAL PRIMARY KEY,
     user_id INT REFERENCES Users(id),
     mod_id INT REFERENCES Mods(id),
-    date_creation TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    creation_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
